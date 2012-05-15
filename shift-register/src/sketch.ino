@@ -13,7 +13,7 @@ void setup()
 
 void loop()
 {
-  for (int i = 0; i < 256; i++) {
+  for (int i = 0; i < 256; i+=1) {
     updateLEDs(i);
     delay(delayTime);
   }
@@ -22,6 +22,6 @@ void loop()
 void updateLEDs(int value)
 {
   digitalWrite(latch, LOW);
-  shiftOut(data, clock, MSBFIRST, value);
+  shiftOut(data, clock, LSBFIRST, value);
   digitalWrite(latch, HIGH);
 }
