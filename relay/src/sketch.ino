@@ -1,5 +1,6 @@
 
 int ledPin = 2;
+int delayTime = 5000;
 
 void setup()
 {
@@ -9,7 +10,8 @@ void setup()
 void loop()
 {
   digitalWrite(ledPin, HIGH);
-  delay(1000);
+  delay(delayTime);
   digitalWrite(ledPin, LOW);
-  delay(1000);
+  delay(delayTime);
+
 }
