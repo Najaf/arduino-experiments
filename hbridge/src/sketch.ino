@@ -1,13 +1,11 @@
-const int switchPin = 2;
-const int h1Pin     = 4;
-const int h2Pin     = 3;
-const int h3Pin     = 6;
-const int h4Pin     = 5;
+const int h1Pin     = 3;
+const int h2Pin     = 4;
+const int h3Pin     = 11;
+const int h4Pin     = 10;
 const int enablePin = 9;
 
 void setup()
 {
-  pinMode(switchPin, INPUT);
   pinMode(h1Pin, OUTPUT);
   pinMode(h2Pin, OUTPUT);
   pinMode(h3Pin, OUTPUT);
@@ -18,11 +16,7 @@ void setup()
 
 void loop()
 {
-  if (digitalRead(switchPin) == HIGH) {
-    forward();
-  } else {
-    stop();
-  }
+  forward();
 }
 
 void rightStop() {
