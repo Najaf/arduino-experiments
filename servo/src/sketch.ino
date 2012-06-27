@@ -1,5 +1,7 @@
 #include <Servo.h>
 
+Servo myservo;
+
 int zero = 1000;
 int ninety = 1500;
 int oneeighty = 2000;
@@ -11,28 +13,38 @@ int rotated = 0;
 
 void setup()
 {
-  pinMode(servoPin, OUTPUT);
+  //pinMode(servoPin, OUTPUT);
+  myservo.attach(servoPin);
 }
 
 void loop()
 {
-  if (rotated == 0) {
-    for (int i = 0; i < 100; i++ ) {
-      servoLeft();
-      delay(20);
-    }
-    rotated = 1;
-  }
+  myservo.write(180);
+  delay(1000);
+  myservo.write(135);
+  delay(1000);
+  myservo.write(90);
+  delay(1000);
+  myservo.write(45);
+  delay(1000);
+  myservo.write(0);
+  delay(1000);
+  myservo.write(45);
+  delay(1000);
+  myservo.write(90);
+  delay(1000);
+  myservo.write(135);
+  delay(1000);
 }
 
 void servoLeft()
 {
-  pulseServo(500);
+  pulseServo(600);
 }
 
 void servoRight()
 {
-  pulseServo(2500);
+  pulseServo(2400);
 }
 
 void servoForward()
@@ -42,7 +54,10 @@ void servoForward()
 
 void pulseServo(int delayTime)
 {
-  digitalWrite(servoPin, HIGH);
-  delayMicroseconds(delayTime);
-  digitalWrite(servoPin, LOW);
+  for (int i = 0; i < 100; i++) {
+    digitalWrite(servoPin, HIGH);
+    delayMicroseconds(delayTime);
+    digitalWrite(servoPin, LOW);
+    delay(20);
+  }
 }

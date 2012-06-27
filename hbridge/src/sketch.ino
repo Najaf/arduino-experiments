@@ -1,8 +1,9 @@
-const int h1Pin     = 3;
+const int h1Pin     = 2;
 const int h2Pin     = 4;
-const int h3Pin     = 11;
-const int h4Pin     = 10;
-const int enablePin = 9;
+const int h3Pin     = 7;
+const int h4Pin     = 8;
+const int enablePin1 = 12;
+const int enablePin2 = 13;
 
 void setup()
 {
@@ -10,13 +11,18 @@ void setup()
   pinMode(h2Pin, OUTPUT);
   pinMode(h3Pin, OUTPUT);
   pinMode(h4Pin, OUTPUT);
-  pinMode(enablePin, OUTPUT);
-  digitalWrite(enablePin, HIGH);
+  pinMode(enablePin1, OUTPUT);
+  pinMode(enablePin2, OUTPUT);
+  digitalWrite(enablePin1, HIGH);
+  digitalWrite(enablePin2, HIGH);
 }
 
 void loop()
 {
   forward();
+  delay(1000);
+  stop();
+  delay(1000);
 }
 
 void rightStop() {
